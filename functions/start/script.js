@@ -31,6 +31,7 @@ function playRiff(start) {
 // The whole song, timed from start.
 function song(start) {
   playRiff(start);
+  playRiff(start+ 2);
   // TODO 4: call playRiff again, two seconds after the first one
 }
 
