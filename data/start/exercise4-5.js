@@ -2,19 +2,25 @@
 // beat comes from exercise3.js. Every file on the page can use the variables the others make.
 
 function playNote(name, length, time) {
+
   // TODO 5: log what is playing, before the note plays:
   //         console.log("Playing " + name + " for " + length);
   synth.triggerAttackRelease(name, length, time);
+  console.log("Playing " + name + " for " + length);
 }
 
 // TODO 4a: store the three notes and one length in variables, here, above the function.
 // TODO 4b: use those variables in the calls below instead of the values typed in.
 // TODO 4c: change the length variable once. Do all three notes change?
 
+const note3 = "C4";
+const note4 = "E4";
+const note5 = "G4";
+let duration1 = "8n";
 function exercise4(start) {
-  playNote("C4", "8n", start);
-  playNote("E4", "8n", start + beat);
-  playNote("G4", "8n", start + beat * 2);
+  playNote(note3, duration1, start);
+  playNote(note4, duration1, start + beat);
+  playNote(note5, duration1, start + beat * 2);
 }
 
 // ---------- You don't need to change anything below this line ----------
