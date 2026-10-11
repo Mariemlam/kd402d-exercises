@@ -5,6 +5,7 @@
 
 // ---------- Step 1: the instruments, as functions ----------
 // Each one plays at time: the exact moment Tone hands us.
+let beat = 1 ;
 function playBass(time) {
   bass.triggerAttackRelease("C2", "8n", time);
 }
@@ -23,7 +24,12 @@ function playMelody (time){
 // ---------- Step 2: hand the beat to Tone ----------
 // Tone calls playStep for us, once every beat, and hands it the time to play at.
 function playStep(time) {
+  console.log("beat " + beat);
   playBass(time);
+  beat = beat+ 1 ;
+  if(beat > 4){
+    beat = 1;
+  }
 }
 
 new Tone.Loop(playStep, "4n").start(0); // "4n": once every beat
@@ -62,6 +68,7 @@ new Tone.Loop(playStep, "4n").start(0); // "4n": once every beat
 
 // Runs when you press Play: start counting from the top, then start Tone's clock.
 function startSong() {
+  beat = 1 ;
   Tone.Transport.stop();
   Tone.Transport.start();
 }
