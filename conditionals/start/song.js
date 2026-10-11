@@ -6,6 +6,7 @@
 // ---------- Step 1: the instruments, as functions ----------
 // Each one plays at time: the exact moment Tone hands us.
 let beat = 1 ;
+let isLively = false ;
 function playBass(time) {
   bass.triggerAttackRelease("C2", "8n", time);
 }
@@ -25,10 +26,17 @@ function playMelody (time){
 // Tone calls playStep for us, once every beat, and hands it the time to play at.
 function playStep(time) {
   console.log("beat " + beat);
-  playBass(time);
-  beat = beat+ 1 ;
-  if(beat > 4){
-    beat = 1;
+   if  (beat === 1 ){
+    playBass(time);}
+  if (beat === 1 || beat === 3) {
+     playChord(time);
+    }
+  if (isLively && beat === 4) {
+     synth.triggerAttackRelease("C5", "16n", time);
+     }
+    beat = beat+ 1 ;
+     if(beat > 4){
+      beat = 1;
   }
 }
 
