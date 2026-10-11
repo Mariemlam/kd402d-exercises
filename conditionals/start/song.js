@@ -8,6 +8,14 @@
 function playBass(time) {
   bass.triggerAttackRelease("C2", "8n", time);
 }
+function playChord(time){
+  synth.triggerAttackRelease("C4", "4n", time);
+  synth.triggerAttackRelease("E4","4n",time);
+  synth.triggerAttackRelease("G4", "4n", time);
+}
+function playMelody (time){
+  synth.triggerAttackRelease("G4","8n", time);
+}
 
 // TODO 1a: write playChord(time): play "C4", "E4" and "G4" on synth, all three at time, all "4n" long.
 // TODO 1b: write playMelody(time): play "G4" on synth, "8n" long, at time.
