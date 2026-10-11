@@ -17,7 +17,12 @@ function playChord(time){
   synth.triggerAttackRelease("G4", "4n", time);
 }
 function playMelody (time){
-  synth.triggerAttackRelease("G4","8n", time);
+  if(bar <=4 ){
+  synth.triggerAttackRelease("G4","8n", time);}
+  else if (bar === 5 || bar === 6){
+    synth.triggerAttackRelease("A4","8n", time)
+  } else {synth.triggerAttackRelease("E4","8n", time)}
+
 }
 
 // TODO 1a: write playChord(time): play "C4", "E4" and "G4" on synth, all three at time, all "4n" long.
@@ -42,7 +47,9 @@ function playStep(time) {
      if(beat > 4){
       beat = 1;
       bar = bar + 1;
-
+    }
+     if (bar > 8) {
+      Tone.Transport.stop(time);
   }
 }
 
