@@ -3,17 +3,18 @@
 // JavaScript runs one block: never both, never neither.
 
 function exercise5(start) {
-  let isMuted = false; // try true
+  let isMuted = false ; // try true
   const note = "C4";
   const duration = "4n";
 
   // TODO 5a: put the line below inside an if / else, so the boolean decides:
-  //            if (isMuted) {
-  //              console.log("Exercise 5: muted, so nothing plays");
-  //            } else {
-  //              ...the line that plays...
-  //            }
-  synth.triggerAttackRelease(note, duration, start);
+              if (isMuted) {
+               console.log("Exercise 5: muted, so nothing plays");
+             } else {
+              synth.triggerAttackRelease(note, duration, start);
+
+             }
+
 
   // TODO 5b: flip isMuted to true and press. Then back to false. Which block ran each time?
   // TODO 5c: bug hunt. Put quotation marks around it: let isMuted = "false";
