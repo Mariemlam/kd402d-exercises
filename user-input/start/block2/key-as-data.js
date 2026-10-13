@@ -7,19 +7,31 @@ const synth = new Tone.Synth().toDestination();
 
 // The octave every note is played in. Exercise 7 plays one higher with Shift.
 let octave = 4;
+function noteForKey(key,octave){
+    if (key === "a"){return "C"+ octave };
+    if (key === "s"){return "D"+ octave };
+    if (key === "d"){return "E"+ octave };
+    if (key === "f"){return "F"+ octave };
+    if (key === "g"){return "G"+ octave };
+    if (key === "h"){return "A"+ octave };
+    if (key === "j"){return "B"+ octave };
+    if (key === "k"){return "c"+ (octave +1) };
+    return "";
+  }
+  function letterNote(key , octave ){
+    if ( key.length === 1 && key >= "a" && key <= "g"){
+      return key.toUpperCase() + octave ;
+    } return "" ;
+  }
 
 function handleKeyDown(event) {
   Tone.start(); // sound can only start after a key press or a click
   console.log(event.key);
- // console.log("c">="a");
-  //console.log("h"<="g");
-  //console.log("Enter">="a");
-  //console.log("Enter".length === 1);
-  if ( event.key.length === 1 && event.key >= "a" && event.key <= "g") {
-    const note = event.key.toUpperCase() + octave ;
-    synth.triggerAttackRelease( note , "8n");
+  let note = noteForKey(event.key , octave)
+  if (note !== ""){
+    synth.triggerAttackRelease(note,"8n" );
   }
-}
+  }
 
 document.addEventListener("keydown", handleKeyDown);
 
@@ -55,7 +67,7 @@ document.addEventListener("keydown", handleKeyDown);
 //              synth.triggerAttackRelease(note, "8n");
 //            }
 // TODO 6d: change noteForKey to letterNote in that line, and back. Which mapping is easier to play
-//          a melody on? Which was easier to write? Answer in a comment.
+//          a melody on? Which was easier to write? Answer in a comment. letterNote is easier since it s 1 line 
 
 // ---------- Exercise 7: Shift for an octave ----------
 // event.shiftKey is a boolean: true while Shift is held down.
