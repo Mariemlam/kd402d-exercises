@@ -27,26 +27,26 @@ function noteForKey(key,octave){
 
 function handleKeyDown(event) {
   Tone.start(); // sound can only start after a key press or a click
-  console.log(event.key);
+
   let playOctave = octave;
 if (event.shiftKey){
       playOctave = octave + 1 ;
     }
     let note = noteForKey(event.key.toLowerCase(), playOctave);
+
   if (note !== ""){
+    console.log("Key " + event.key + " played " + note);
     synth.triggerAttackRelease(note,"8n" );
 
-  }
+
+  }else {console.log("Key " + event.key + " plays nothing");}
 
   }
 
 document.addEventListener("keydown", handleKeyDown);
 
 
-// ---------- Exercise 8: make the input visible ----------
-// TODO 8: replace console.log(event.key) with one line that says what came in and what played:
-//            console.log("Key " + event.key + " played " + note);
-//          and, for keys that aren't notes, log "Key Enter plays nothing" (with the real key).
+
 
 // ---------- Exercise 5: keys are note names ----------
 // The letter IS the note: press c, hear C.
