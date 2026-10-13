@@ -7,6 +7,7 @@ const synth = new Tone.Synth().toDestination();
 
 // The octave every note is played in. Exercise 7 plays one higher with Shift.
 let octave = 4;
+
 function noteForKey(key,octave){
     if (key === "a"){return "C"+ octave };
     if (key === "s"){return "D"+ octave };
@@ -27,13 +28,25 @@ function noteForKey(key,octave){
 function handleKeyDown(event) {
   Tone.start(); // sound can only start after a key press or a click
   console.log(event.key);
-  let note = noteForKey(event.key , octave)
+  let playOctave = octave;
+if (event.shiftKey){
+      playOctave = octave + 1 ;
+    }
+    let note = noteForKey(event.key.toLowerCase(), playOctave);
   if (note !== ""){
     synth.triggerAttackRelease(note,"8n" );
+
   }
+
   }
 
 document.addEventListener("keydown", handleKeyDown);
+
+
+// ---------- Exercise 8: make the input visible ----------
+// TODO 8: replace console.log(event.key) with one line that says what came in and what played:
+//            console.log("Key " + event.key + " played " + note);
+//          and, for keys that aren't notes, log "Key Enter plays nothing" (with the real key).
 
 // ---------- Exercise 5: keys are note names ----------
 // The letter IS the note: press c, hear C.
@@ -67,7 +80,7 @@ document.addEventListener("keydown", handleKeyDown);
 //              synth.triggerAttackRelease(note, "8n");
 //            }
 // TODO 6d: change noteForKey to letterNote in that line, and back. Which mapping is easier to play
-//          a melody on? Which was easier to write? Answer in a comment. letterNote is easier since it s 1 line 
+//          a melody on? Which was easier to write? Answer in a comment. letterNote is easier since it s 1 line
 
 // ---------- Exercise 7: Shift for an octave ----------
 // event.shiftKey is a boolean: true while Shift is held down.
