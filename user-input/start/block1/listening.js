@@ -12,7 +12,12 @@ const synth = new Tone.Synth().toDestination();
 document.addEventListener("keydown", function (event) {
   Tone.start(); // sound can only start after a key press or a click
   console.log(event.key);
+  if (event.key === "a"){
+    synth.triggerAttackRelease("C4","8n");
+  }
 });
+
+
 
 // ---------- Exercise 2: one key, one sound ----------
 // TODO 2: inside the listener above, under the console.log, play "C4" when the key is "a":
