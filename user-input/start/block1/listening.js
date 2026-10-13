@@ -15,6 +15,12 @@ document.addEventListener("keydown", function (event) {
   if (event.key === "a"){
     synth.triggerAttackRelease("C4","8n");
   }
+  else if (event.key === "s"){
+    synth.triggerAttackRelease("D4","8n");
+  }
+  else if (event.key === "d"){
+    synth.triggerAttackRelease("E4","8n");
+  }
 });
 
 
@@ -24,7 +30,6 @@ document.addEventListener("keydown", function (event) {
 //           if (event.key === "a") {
 //             synth.triggerAttackRelease("C4", "8n");
 //           }
-
 // ---------- Exercise 3: a few keys with else if ----------
 // TODO 3a: add an else if, so "s" plays "D4", and another, so "d" plays "E4".
 // TODO 3b: play a three-note tune. (Try: d s a s d d d.)
