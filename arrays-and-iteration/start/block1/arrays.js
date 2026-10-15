@@ -36,16 +36,21 @@ console.log(riff.length);
 //            console.log(riff.length);
 // TODO 2b: add four notes to the end, one at a time:  riff.push("C4");
 //          Log riff.length after each push. Predict each number first.
-// 2c In a comment: when would you start from [] instead of writing all the notes out? if for example we push a note only if a certain condition is true 
+// 2c In a comment: when would you start from [] instead of writing all the notes out? if for example we push a note only if a certain condition is true
 
 // ---------- Exercise 3: add at the front too ----------
+let chord =["E4","G"];
+chord.unshift("C4");
+chord.push("B4");
+console.log(chord[1]);
+console.log(chord[3]);
 // TODO 3a: start from two notes, add one to the front and one to the end:
 //            let chord = ["E4", "G4"];
 //            chord.unshift("C4");
 //            chord.push("B4");
-// 3b Before you log anything: what is the index of "E4" now? Of "B4"? Write it in a comment.
+// 3b Before you log anything: what is the index of "E4" now?  index 1 Of "B4"?  index 3 Write it in a comment.
 // TODO 3c: log chord, chord[1] and chord[3] to check.
-//          In a comment: which notes changed their index, and why?
+//          In a comment: which notes changed their index, and why?since we added 1 note in the front we shifted E4 and G4 's positions 
 
 // ---------- Exercise 4: an array of numbers ----------
 // Arrays hold any kind of value, not only note names. You'll use these for timing in block 4.
