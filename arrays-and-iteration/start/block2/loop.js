@@ -11,13 +11,18 @@ let melody = ["C4", "E4", "G4", "B4"];
 
 // Plays every note in melody. Exercise 5 writes the loop inside it.
 function playMelody() {
+   for( let i= 0 ; i<melody.length ; i++)
+ { console.log("pass"+i+":"+ melody[i]);
+  synth.triggerAttackRelease(melody[i] , "8n")
+
+  }
   // ---------- Exercise 5: the loop, from its shape ----------
   // Write it yourself from the four parts, don't copy it from the slides:
   //   start:  let i = 0
   //   test:   i < melody.length
   //   step:   i++
   //   body:   log the pass, then play the note at position i
-  // TODO 5a: before you write it, predict in a comment: how many passes, which notes?
+  // TODO 5a: before you write it, predict in a comment: how many passes, which notes? 4 passes and the notes will play all notes
   // TODO 5b: write the loop. The body has two lines:
   //            console.log("pass " + i + ": " + melody[i]);
   //            synth.triggerAttackRelease(melody[i], "8n");
