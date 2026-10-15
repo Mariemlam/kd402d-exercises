@@ -11,9 +11,10 @@ let melody = ["C4", "E4", "G4", "B4"];
 
 // Plays every note in melody. Exercise 5 writes the loop inside it.
 function playMelody() {
-   for( let i= 0 ; i<melody.length ; i++)
+   for( let i= 0 ; i< melody.length ; i++)
  { console.log("pass"+i+":"+ melody[i]);
   synth.triggerAttackRelease(melody[i] , "8n")
+
 
   }
   // ---------- Exercise 5: the loop, from its shape ----------
@@ -31,8 +32,8 @@ function playMelody() {
   //
   // ---------- Exercise 6: break it on purpose, at the end ----------
   // TODO 6a: change  i < melody.length  to  i <= melody.length.
-  //          Predict first: how many passes now? What does the last one log?
-  // TODO 6b: run it. In a comment: what is melody[4], and why? Is there an error?
+  //          Predict first: how many passes now? What does the last one log? 5 passes last one is undefined
+  // TODO 6b: run it. In a comment: what is melody[4] it s undefined , and why? Is there an error? because of this condition :i<= melody.length  we should remove the equal
   //          Then put it back to <.
   //
   // ---------- Exercise 7: break it at the start ----------
