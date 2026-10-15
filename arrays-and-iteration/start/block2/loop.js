@@ -38,7 +38,7 @@ function playMelody() {
   //
   // ---------- Exercise 7: break it at the start ----------
   // TODO 7: start at  let i = 1  instead of 0, with the test back to <.
-  //         Predict which note goes missing, then check the console. Put it back to 0.
+  //         Predict which note goes missing, then check the console. Put it back to 0. the first note goes missing "C4"
 }
 
 // ---------- Exercise 8: fix it, then make the melody longer ----------
