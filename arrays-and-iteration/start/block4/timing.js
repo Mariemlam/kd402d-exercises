@@ -12,8 +12,9 @@ let melody = ["C4", "E4", "G4", "B4"];
 // Plays every note in melody. All the notes start at once.
 function playMelody() {
   for (let i = 0; i < melody.length; i++) {
-    console.log("pass " + i + ": " + melody[i]);
-    synth.triggerAttackRelease(melody[i], "8n");
+    console.log("pass " + i + ": " + melody[i] );
+
+    synth.triggerAttackRelease(melody[i], "8n" , Tone.now()+ i*0.4 );
   }
 }
 
