@@ -7,6 +7,7 @@
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
 let melody = ["C4", "E4", "G4", "B4"];
+let bass = ["A2", "C3", "E3", "A3", "C4"];
 // TODO 14a: a second, longer list:  let bass = ["A2", "C3", "E3", "A3", "C4"];
 
 // Plays every note in melody. All the notes start at once.
@@ -17,6 +18,12 @@ function playMelody() {
     synth.triggerAttackRelease(melody[i], "8n" , Tone.now()+ i*0.4 );
   }
 }
+function playNotes(notes) {
+             for (let i = 0; i < notes.length; i++) {
+               console.log("pass " + i + ": " + notes[i] );
+              synth.triggerAttackRelease(notes[i], "8n" , Tone.now()+ i*0.4 );
+            }
+            }
 
 // ---------- Exercise 12: stagger the melody ----------
 // triggerAttackRelease takes a third value: when the note starts, in seconds.
@@ -43,7 +50,7 @@ function playMelody() {
 // TODO 14c: in keyDown, a plays melody and b plays bass:
 //             playNotes(melody);   and   playNotes(bass);
 //           Predict when the last bass note starts, then check.
-// 14d In a comment: what did you change in the loop to play five notes instead of four?
+// 14d In a comment: what did you change in the loop to play five notes instead of four? i added a different key so if i want to play 5 notes i press the key s 
 
 // ---------- Controls ----------
 function keyDown(event) {
@@ -51,7 +58,12 @@ function keyDown(event) {
   if (event.repeat === false) {
     if (event.key === "a") {
       console.log("---- melody ----");
-      playMelody();
+
+      playNotes(melody);
+
+    }if (event.key ==="s"){
+console.log("---- notes ----");
+playNotes(bass);
     }
   }
 }
