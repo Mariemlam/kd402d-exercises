@@ -4,17 +4,26 @@
 // After each exercise: save, read the console, and commit.
 
 // A longer melody, with some notes more than once.
+
 let melody = ["C4", "E4", "G4", "C4", "A4", "C4", "G4", "E4"];
+let count = 0 ;
+for ( let i = 0 ;i < melody.length;i++){
+  if (melody [i] === "C4"){
+    count++;
+  }
+
+
+}console.log("C4 comes" + count + " at time");
 
 // ---------- Exercise 9: count something ----------
 // How many times does "C4" come in the melody?
-// 9a Predict the count, in a comment, by reading the list above.
+// 9a Predict the count, in a comment, by reading the list above. 3
 // TODO 9b: write it in three parts:
 //            before the loop:  let count = 0;
 //            in the loop:      if melody[i] is "C4", add one:  count++;
 //            after the loop:   console.log("C4 comes " + count + " times");
 // TODO 9c: move  let count = 0;  inside the loop, as the first line of the body. Predict, then
-//          run it. In a comment: what went wrong, and why? Then move it back.
+//          run it. In a comment: what went wrong, and why? Then move it back. it gives that count is 0 it makes the count go back to 0
 
 // ---------- Exercise 10: count something else ----------
 // TODO 10: write a second loop, with its own counter, that counts something you choose.
