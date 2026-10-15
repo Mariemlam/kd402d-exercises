@@ -50,14 +50,20 @@ console.log(chord[3]);
 //            chord.push("B4");
 // 3b Before you log anything: what is the index of "E4" now?  index 1 Of "B4"?  index 3 Write it in a comment.
 // TODO 3c: log chord, chord[1] and chord[3] to check.
-//          In a comment: which notes changed their index, and why?since we added 1 note in the front we shifted E4 and G4 's positions 
+//          In a comment: which notes changed their index, and why?since we added 1 note in the front we shifted E4 and G4 's positions
 
 // ---------- Exercise 4: an array of numbers ----------
 // Arrays hold any kind of value, not only note names. You'll use these for timing in block 4.
+let step = [0.2,0.4,0.6,0.8];
+let empty= new Array();
+console.log(step[2]);
+console.log(step[1]+step[2]);
+console.log(empty.length);
+
 // TODO 4a: let steps = [0.2, 0.4, 0.6, 0.8];
-//          Predict steps[2], then log it.
-// TODO 4b: predict, then log:  steps[1] + steps[2]
-//          Is it a number or a string? How can you tell from the console?
+//          Predict steps[2], 0.6 then log it.
+// TODO 4b: predict, then log:  steps[1] + steps[2] = 1
+//          Is it a number or a string? How can you tell from the console? number since they are numbers so it will add them since in js they will replace step[1] with 0.4 and sttep[2] with 0.6 so it will be  0.4+0.6 which gives 1
 // 4c One more way to make an empty array, so you recognise it when you see it:
 //      let empty = new Array();
 //    It means the same as []. Log empty.length. In your own code, write [].
