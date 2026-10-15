@@ -34,7 +34,15 @@ if (melody [i]=== target){
   break;
 } if (foundAt === -1){ console.log(target+ "is not in the melody");}
   }}
-
+function describe(){
+  let count = 0;
+  let played = "";
+  for (let i = 0 ; i< melody.length ; i++){
+if (melody[i]=== "C4"){count ++}
+   played = played + melody[i] + " ";
+  } console.log("C4 count is "+ count);
+    console.log("played : "+ played);
+}
 //             if (melody[i] === target) {
 //               console.log("found " + target + " at index " + i);
 //               break;   // leaves the loop straight away
@@ -78,6 +86,8 @@ function keyDown(event) {
       playNotes(melody);
     }if (event.key === "f") {
       findNote("G4");
+    }if (event.key === "d") {
+      describe();
     }
   }
 }
