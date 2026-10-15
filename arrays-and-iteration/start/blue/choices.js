@@ -24,7 +24,21 @@ function playNotes(notes) {
      console.log ("the length is " + duration + "the note is " + melody[i]);
     }
   }
+  function findNote(target){
+    let foundAt = -1 ;
+    for (let i = 0; i < melody.length; i++) {
+      console.log("checking index " + i);
+if (melody [i]=== target){
+  console.log("found " + target + " at index " + i);
+  foundAt = i ;
+  break;
+} if (foundAt === -1){ console.log(target+ "is not in the melody");}
+  }}
 
+//             if (melody[i] === target) {
+//               console.log("found " + target + " at index " + i);
+//               break;   // leaves the loop straight away
+//             }
 
 // ---------- B1: a different length for different notes ----------
 // TODO B1a: in playNotes, before the note plays, choose its length with if / else if:
@@ -62,6 +76,8 @@ function keyDown(event) {
   if (event.repeat === false) {
     if (event.key === "a") {
       playNotes(melody);
+    }if (event.key === "f") {
+      findNote("G4");
     }
   }
 }
