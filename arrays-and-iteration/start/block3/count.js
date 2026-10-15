@@ -37,11 +37,18 @@ console.log("E4 does't come " + notE4 + " at time");
 // ---------- Exercise 11: trace it by hand ----------
 // A short melody, so you can follow every pass.
 let short = ["E4", "C4", "G4", "C4"];
+let countshort = 0 ;
+for( let i = 0 ; i < short.length; i++){
+  console.log(i, short[i],countshort);
+  if(short[i] === "C4"){ countshort++;}
+  console.log(countshort);
+}
+
 // TODO 11a: in a comment, write a table: one row per pass, with the value of i,
 //           short[i], and the count at the START of that pass. Like this:
 //             i | short[i] | count at the start
 //             0 | "E4"     | 0
-//             1 | ...
+//             1 |
 //           Then write what is logged after the loop.
 // TODO 11b: only now, write the loop that counts "C4" in short, and log the count after it.
 //           Add  console.log(i, short[i], countShort);  as the first line of the body
