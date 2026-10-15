@@ -5,16 +5,20 @@
 
 // This morning's melody: four notes, kept in order.
 let melody = ["C4", "E4", "G4", "B4"];
+console.log(melody);
+console.log(melody.length);
+console.log(melody[4]);
+console.log(melody[melody.length-1]);
 
 // ---------- Exercise 1: write the list out ----------
 // 1a Predict, in a comment: what do these three log?
-//      melody        melody.length        melody[0]
+//      melody :  it gives you what melody is meaning Array and the number of items 4       melody.length : gives you how many items we have in melody which is 4       melody[0] gives you the first item in the array :"C4"
 // TODO 1b: log them, one console.log each:
 //            console.log(melody);
-//          Were the length and the first index what you expected?
+//          Were the length and the first index what you expected? yes
 // TODO 1c: log the last note twice: once as melody[3], once as melody[melody.length - 1].
-//          In a comment: why is the last index 3, when there are 4 notes?
-// 1d Predict: what does melody[4] log? Check.
+//          In a comment: why is the last index 3, when there are 4 notes? we start counting from 0
+// 1d Predict: what does melody[4] log?    undefined   Check.
 
 // ---------- Exercise 2: start empty, build it up ----------
 // TODO 2a: make an empty array and log its length:
