@@ -21,12 +21,22 @@ console.log(melody[melody.length-1]);
 // 1d Predict: what does melody[4] log?    undefined   Check.
 
 // ---------- Exercise 2: start empty, build it up ----------
+let riff = [];
+console.log(riff.length);
+riff.push("C4")
+console.log(riff.length)
+riff.push("D5");
+console.log(riff.length);
+riff.push("B4");
+console.log(riff.length);
+riff.push("A4");
+console.log(riff.length);
 // TODO 2a: make an empty array and log its length:
 //            let riff = [];
 //            console.log(riff.length);
 // TODO 2b: add four notes to the end, one at a time:  riff.push("C4");
 //          Log riff.length after each push. Predict each number first.
-// 2c In a comment: when would you start from [] instead of writing all the notes out?
+// 2c In a comment: when would you start from [] instead of writing all the notes out? if for example we push a note only if a certain condition is true 
 
 // ---------- Exercise 3: add at the front too ----------
 // TODO 3a: start from two notes, add one to the front and one to the end:
