@@ -7,14 +7,15 @@
 
 let melody = ["C4", "E4", "G4", "C4", "A4", "C4", "G4", "E4"];
 let count = 0 ;
+let notE4 = 0 ;
 for ( let i = 0 ;i < melody.length;i++){
   if (melody [i] === "C4"){
     count++;
-  }
+  } if (melody[i]!== "E4"){notE4++;}
 
 
 }console.log("C4 comes" + count + " at time");
-
+console.log("E4 does't come " + notE4 + " at time");
 // ---------- Exercise 9: count something ----------
 // How many times does "C4" come in the melody?
 // 9a Predict the count, in a comment, by reading the list above. 3
