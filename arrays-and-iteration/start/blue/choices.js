@@ -7,13 +7,24 @@
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
 let melody = ["C4", "E4", "G4", "C4", "A4", "G4", "E4", "C4"];
-
+let length = ["4n","2n","16n","8n"]
 // Plays every note in a list, one every 0.4 seconds.
 function playNotes(notes) {
-  for (let i = 0; i < notes.length; i++) {
-    synth.triggerAttackRelease(notes[i], "8n", Tone.now() + i * 0.4);
+  for (let i = 0; i < melody.length; i++) {
+
+ let duration = "8n";
+      if (melody[i]==="C4"){duration = "4n";
+         }
+    else if (melody[i]==="E4"){duration = "16n";
+      }
+    else if (melody[i]==="G4"){duration = "2n";
+      }
+    else  {duration = "16n";
+      }synth.triggerAttackRelease(melody[i], duration, Tone.now() + i * 0.4)
+     console.log ("the length is " + duration + "the note is " + melody[i]);
+    }
   }
-}
+
 
 // ---------- B1: a different length for different notes ----------
 // TODO B1a: in playNotes, before the note plays, choose its length with if / else if:
