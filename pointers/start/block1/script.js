@@ -7,7 +7,7 @@
 import { createShape } from "./shape.js";
 
 // ---------- Settings ----------
-const note = "C4"; // the note the shape plays
+const note = ["C4","D4"]; // the note the shape plays
 
 // ---------- State ----------
 const shape = createShape(); // one shape, made by shape.js
@@ -15,6 +15,15 @@ const shape = createShape(); // one shape, made by shape.js
 // ---------- Sound ----------
 // A plain Synth: one note at a time.
 const synth = new Tone.Synth().toDestination();
+function pointerEnter(event){
+  synth.triggerAttack(note[0] , "8n");
+  console.log("note: " + note[0] + "  for " + "8n");
+}
+function pointerLeave(event){
+  synth.triggerRelease();
+  console.log("note: " + note[0] );
+}
+
 
 // ---------- Exercise 1: make a shape ----------
 // The shape is already on the page: a pink circle in the top-left corner.
@@ -22,8 +31,9 @@ const synth = new Tone.Synth().toDestination();
 //            shape.setSize(150);
 //            shape.setColour(200, 80, 50);   // hue 0 to 360, saturation, lightness
 //            shape.setPosition(0.5, 0.5);
-// 1b Predict, in a comment: setPosition(0.5, 0.5) puts the shape's top-left corner where? And (1, 1)?
-//    Hint: these are the same 0 to 1 numbers as this morning. Check, then put it back.
+// 1b Predict, in a comment: setPosition(0.5, 0.5) puts the shape's top-left corner where? And (1, 1)?  right side  further down
+//       i think it s going to be the middle of the page since x is 0,5 and y is 0,5
+// Hint: these are the same 0 to 1 numbers as this morning. Check, then put it back.
 
 // ---------- Exercise 2: a sound when you arrive ----------
 // TODO 2a: write a function pointerEnter(event) that plays the note once:
@@ -36,25 +46,39 @@ const synth = new Tone.Synth().toDestination();
 // ---------- Exercise 3: hold a note while you're on it ----------
 // TODO 3a: change pointerEnter to start the note and keep it going: synth.triggerAttack(note);
 //          and write pointerLeave to stop it: synth.triggerRelease();
-// 3b Predict, in a comment: what happens if you forget the pointerleave listener? Try it.
+// 3b Predict, in a comment: what happens if you forget the pointerleave listener? Try it. keeps playing
 
 // ---------- Exercise 4: press to play instead ----------
 // TODO 4a: play the note on "pointerdown" on the shape, and stop it on "pointerup".
 //          Comment out the enter and leave listeners while you try it.
-// 4b Press on the shape, drag off, and let go outside. What happens to the note? Why?
+// 4b Press on the shape, drag off, and let go outside. What happens to the note?  kepps playing Why? it was the last registerd and it let go if we realse it inside the shape
 // TODO 4c: fix it: also stop the note on "pointerleave".
-// 4d In a comment: hovering or pressing, which feels more like an instrument to you?
+// 4d In a comment: hovering or pressing, which feels more like an instrument to you? hovering feels more like an instrument 
 
 // ---------- Controls (Event Handlers) ----------
 function startSound(event) {
   Tone.start(); // browsers only allow sound after a click or a key press
+
+}
+function pointerDown(event){
+   pointerEnter();
+
+}
+function pointerUp(event){
+  pointerLeave();
 }
 
 // ---------- Setup ----------
 function setup() {
   // TODO 1a goes here
+  shape.setSize(100);
+  shape.setColour(150,80,0);
+  shape.setPosition(0.5,0.5);
 
   window.addEventListener("pointerdown", startSound);
+  shape.element.addEventListener(  "pointerdown",pointerDown);
+  shape.element.addEventListener("pointerup" , pointerUp);
+  window.addEventListener("pointerup" , pointerUp);
   // TODO 2a, 3a and 4a: listen on shape.element here
 }
 
