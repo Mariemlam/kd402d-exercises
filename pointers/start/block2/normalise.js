@@ -14,12 +14,12 @@ let octave = 4;
 
 // ---------- Exercise 5: how far left or right? ----------
 // TODO 5a: in pointerMove, log event.clientX. Move to the far right edge: what's the biggest number?
-// 5b Make the browser window narrower and do it again. In a comment: why is the number different?
+// 5b Make the browser window narrower and do it again. In a comment: why is the number different?the window became smaller
 // TODO 5c: normalise it: let normX = event.clientX / window.innerWidth;  and log normX instead.
 // 5d Predict, in a comment: what does the left edge read? The middle? The right edge?
 //    Then resize the window again and check that the right edge still reads (nearly) 1.
 // TODO 5e: do the same for up and down: normY, from event.clientY and window.innerHeight.
-//          In a comment: where is normY 0, at the top or the bottom?
+//          In a comment: where is normY 0, at the top or the bottom? top
 
 // ---------- Exercise 6: stretch it onto detune ----------
 // synth.detune.value bends the note that's playing, in cents.
@@ -70,7 +70,11 @@ function stopNote(event) {
 
 // ---------- Pointer ----------
 function pointerMove(event) {
-  // TODO 5a, 5c, 5e and 6a go here
+  let normX= event.clientX/window.innerWidth;
+  let normY=event.clientY/window.innerHeight;
+  synth.detune.value=normX*2400 -1200;
+  console.log( "x is :" + normX +  "Y IS : " +normY);
+
 }
 
 // ---------- Setup ----------
